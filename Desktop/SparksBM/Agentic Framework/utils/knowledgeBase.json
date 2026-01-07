@@ -1,0 +1,192 @@
+{
+  "topics": {
+    "asset": {
+      "definition": "An asset in ISMS is any item that has value to your organization and needs protection. Assets can be physical or logical.",
+      "types": [
+        "Physical Assets: Servers, laptops, network equipment, printers, mobile devices",
+        "Logical Assets: Databases, applications, software, data files, network configurations",
+        "Information Assets: Customer data, financial records, intellectual property, employee information"
+      ],
+      "context": {
+        "title": "ISO 27001 Context",
+        "points": [
+          "Purpose: Assets are the foundation of risk assessment - you identify risks to assets",
+          "Management: Assets must be inventoried, classified, and protected according to their value",
+          "Lifecycle: Assets go through creation, use, maintenance, and disposal phases"
+        ]
+      },
+      "examples": [
+        "\"Production Database Server\" (physical asset)",
+        "\"Customer Database\" (logical asset)",
+        "\"Employee Laptop\" (physical asset)",
+        "\"Web Application\" (logical asset)"
+      ],
+      "relationship": "Assets belong to scopes. You create a scope first (e.g., \"IT Department\"), then add assets to it.",
+      "commands": [
+        "create asset [name] - Create a new asset",
+        "list assets - List all assets",
+        "get asset [name] - View asset details"
+      ]
+    },
+    "scope": {
+      "definition": "A scope in ISMS (Information Security Management System) defines the boundaries of your security management system.",
+      "context": {
+        "title": "ISO 27001 Context",
+        "points": [
+          "Purpose: Defines which parts of your organization are covered by the ISMS",
+          "Includes: Assets, processes, locations, and people within the scope",
+          "Example: \"IT Department\" scope might include servers, networks, and IT staff"
+        ]
+      },
+      "commands": [
+        "create scope [name] - Create a new scope",
+        "list scopes - List all scopes"
+      ]
+    },
+    "isms": {
+      "definition": "ISMS stands for Information Security Management System. It's a systematic approach to managing sensitive company information so it remains secure.",
+      "context": {
+        "title": "ISO 27001 Context",
+        "points": [
+          "Purpose: Framework for establishing, implementing, maintaining, and continuously improving information security",
+          "Components: Policies, procedures, controls, assets, risks, and people",
+          "Standards: Based on ISO 27001, ISO 22301, NIS-2 compliance requirements"
+        ]
+      },
+      "elements": {
+        "title": "Key Elements",
+        "points": [
+          "Scopes: Organizational boundaries (e.g., \"IT Department\", \"Customer Data Processing\")",
+          "Assets: Items that need protection (servers, databases, applications, data)",
+          "Risks: Threats to information security",
+          "Controls: Security measures to mitigate risks"
+        ]
+      },
+      "benefits": {
+        "title": "Long-term Benefits",
+        "points": [
+          "Continuous improvement of security posture",
+          "Compliance with regulations (ISO 27001, NIS-2)",
+          "Risk reduction and business continuity",
+          "Customer trust and competitive advantage"
+        ]
+      },
+      "commands": [
+        "list scopes - View your ISMS scopes",
+        "list assets - View your assets",
+        "create scope [name] - Create a new scope"
+      ]
+    },
+    "scope_vs_asset": {
+      "comparison": {
+        "Scope": [
+          "Organizational boundary for your ISMS",
+          "Defines what's included in security management",
+          "Example: \"IT Department\", \"Customer Data Processing\""
+        ],
+        "Asset": [
+          "Individual items within a scope that need protection",
+          "Can be physical (servers, laptops) or logical (databases, applications)",
+          "Example: \"Production Database Server\", \"Customer Database\""
+        ]
+      },
+      "relationship": "Scopes contain assets. You create a scope first, then add assets to it.",
+      "commands": [
+        "create scope [name] - Create a scope",
+        "create asset [name] - Create an asset",
+        "list scopes - List all scopes",
+        "list assets - List all assets"
+      ]
+    }
+  },
+  "how_to_create": {
+    "scope": {
+      "steps": [
+        {
+          "title": "Step 1: Choose a Name",
+          "content": "Select a name that describes the organizational boundary. Examples: \"IT Department\", \"Customer Services\", \"Production Systems\""
+        },
+        {
+          "title": "Step 2: Use the Command",
+          "content": "Type: create scope [name]\nExample: create scope IT Department"
+        },
+        {
+          "title": "Step 3: Optional Description",
+          "content": "Add a description: create scope IT Department description \"All IT infrastructure and staff\""
+        },
+        {
+          "title": "Step 4: View Your Scopes",
+          "content": "Use: list scopes"
+        }
+      ],
+      "note": "The scope will be created in your default domain. You can then add assets, controls, and other ISMS objects to it."
+    },
+    "asset": {
+      "steps": [
+        {
+          "title": "Step 1: Choose a Name",
+          "content": "Pick a descriptive name for your asset.\nExamples: \"Production Server\", \"Customer Database\", \"Employee Laptop\""
+        },
+        {
+          "title": "Step 2: Use the Command",
+          "content": "Type: `create asset [name]`\nExample: `create asset Production Server`"
+        },
+        {
+          "title": "Step 3: Optional Details",
+          "content": "Add a description: `create asset Production Server description \"Main web application server\"`"
+        },
+        {
+          "title": "Step 4: Link to a Scope (Recommended)",
+          "content": "Assets should belong to scopes for proper organization.\nAfter creating your asset, link it to a scope using the Verinice UI or API."
+        },
+        {
+          "title": "Step 5: View Your Assets",
+          "content": "Use: `list assets`"
+        }
+      ],
+      "note": "Assets are the items you need to protect in your ISMS. They can be physical (servers, devices) or logical (databases, applications, data)."
+    },
+    "person": {
+      "format": "create person [name]",
+      "example": "create person John Smith",
+      "optional": "Add description: create person John Smith description \"IT Security Manager\"",
+      "view": "list persons",
+      "note": "Persons represent people in your organization who have roles and responsibilities in the ISMS."
+    },
+    "control": {
+      "format": "create control [name]",
+      "example": "create control Access Control Policy",
+      "optional": "Add description: create control Access Control Policy description \"Defines access control requirements for IT systems\"",
+      "view": "list controls",
+      "note": "Controls are security measures that mitigate risks in your ISMS (e.g., policies, procedures, technical controls)."
+    },
+    "document": {
+      "format": "create document [name]",
+      "example": "create document Security Policy",
+      "optional": "Add description: create document Security Policy description \"Organization-wide information security policy\"",
+      "view": "list documents",
+      "note": "Documents represent policies, procedures, and other ISMS documentation."
+    },
+    "incident": {
+      "format": "create incident [name]",
+      "example": "create incident Data Breach 2026-01-05",
+      "optional": "Add description: create incident Data Breach 2026-01-05 description \"Unauthorized access to customer database\"",
+      "view": "list incidents",
+      "note": "Incidents are security events that need to be tracked and managed in your ISMS."
+    },
+    "scenario": {
+      "format": "create scenario [name]",
+      "example": "create scenario Ransomware Attack",
+      "optional": "Add description: create scenario Ransomware Attack description \"Scenario for testing ransomware response procedures\"",
+      "view": "list scenarios",
+      "note": "Scenarios represent risk scenarios or business continuity scenarios in your ISMS."
+    },
+    "process": {
+      "format": "create process [name]",
+      "example": "create process Incident Response",
+      "optional": "Add description: create process Incident Response description \"Process for handling security incidents\"",
+      "view": "list processes",
+      "note": "Processes represent business or security processes in your ISMS."
+    }
+  }
+}
