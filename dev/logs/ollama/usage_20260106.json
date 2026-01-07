@@ -1,0 +1,18 @@
+{
+  "date": "2026-01-06T19:07:39.549536",
+  "total_calls": 1,
+  "successful_calls": 1,
+  "failed_calls": 0,
+  "rate_limit_errors": 0,
+  "total_tokens": 0,
+  "average_response_time": 1.08,
+  "calls": [
+    {
+      "timestamp": "2026-01-06T19:07:40.634048",
+      "query_length": 13,
+      "response_length": 356,
+      "response_time": 1.08,
+      "success": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# Core dependencies
+pandas>=2.0.0
+openpyxl>=3.1.0
+python-docx>=1.1.0
+python-dotenv>=1.0.0
+PyPDF2>=3.0.0
+pdfplumber>=0.10.0
+pycryptodome>=3.19.0
+
+# Google Gemini
+google-generativeai>=0.3.0
+
+# Azure OpenAI (if using Azure backend)
+# azure-ai-openai>=1.0.0
+
+# Testing (optional)
+# pytest>=7.0.0
+

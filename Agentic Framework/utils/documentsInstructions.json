@@ -1,0 +1,44 @@
+{
+  "file_processing": {
+    "supported_extensions": [".xlsx", ".xls", ".docx", ".doc", ".pdf"],
+    "command_patterns": [
+      "process\\s+(.+\\.(xlsx|xls|docx|doc))",
+      "read\\s+(.+\\.(xlsx|xls|docx|doc))",
+      "readthe\\s+(.+\\.(xlsx|xls|docx|doc))",
+      "read\\s+the\\s+(.+\\.(xlsx|xls|docx|doc))",
+      "open\\s+(.+\\.(xlsx|xls|docx|doc))",
+      "load\\s+(.+\\.(xlsx|xls|docx|doc))"
+    ],
+    "keywords": [
+      "read document", "read documents", "readthe document", "readthe documents",
+      "read the document", "read the documents", "process document", "process documents",
+      "read file", "read files", "process file", "process files"
+    ]
+  },
+  "bulk_import": {
+    "triggers": [
+      "yes", "y", "ii", "2",
+      "import all", "import assets", "import the assets", "import",
+      "create all", "create all assets", "create assets",
+      "create asset all",
+      "bulk", "bulk import", "bulk create"
+    ]
+  },
+  "document_queries": {
+    "count_patterns": [
+      "how many documents", "how many files", "count documents",
+      "number of documents", "number of files", "documents count", "files count"
+    ],
+    "task_patterns": [
+      "how many things", "how many tasks", "what do we need to do",
+      "what tasks", "things to do", "tasks to do",
+      "things we have to done", "things we have to do", "what needs to be done"
+    ],
+    "status_patterns": [
+      "status", "what are you", "who are you"
+    ],
+    "ready_patterns": [
+      "ready", "proceed"
+    ]
+  }
+}
